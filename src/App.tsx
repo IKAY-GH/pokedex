@@ -6,9 +6,12 @@ const pokemonList = [
     name: "bulbasaur",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    type: "herbe",
   },
   {
     name: "mew",
+    imgSrc: "",
+    type: "psy",
   },
 ];
 
