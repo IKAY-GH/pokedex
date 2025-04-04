@@ -11,11 +11,7 @@ function PokemonCard({ pokemon }: PokemonProps) {
   return (
     <figure>
       {/* Utilisation de l'opérateur ternaire pour afficher l'image ou "???" */}
-      {pokemon.imgSrc ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name} />
-      ) : (
-        <p>???</p>
-      )}
+      {imgSrc ? <img src={imgSrc} alt={name} /> : <p>???</p>}
       <p> Type: {type} </p>
       <figcaption>{name}</figcaption>
     </figure>
