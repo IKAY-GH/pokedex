@@ -11,7 +11,26 @@ const pokemonList = [
   },
   {
     name: "mew",
+    imgSrc: "https://www.pokepedia.fr/images/e/e6/Mew-RFVF.png",
     type: "psy",
+  },
+  {
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    type: "Feu",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    type: "eau",
+  },
+  {
+    name: "pikachu",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    type: "électrique",
   },
 ];
 
@@ -25,14 +44,19 @@ function App() {
 
   return (
     <div>
+      <nav>
+        {pokemonList.map((element) => (
+          <button
+            key={element.name}
+            type="button"
+            onClick={() => setPokemonName(element.name)}
+          >
+            {element.name}
+          </button>
+        ))}
+      </nav>
       <PokemonCard pokemon={pokemon} />
       <p>{pokemonName}</p>
-      <button type="button" onClick={() => setPokemonName("bulbizarre")}>
-        Bulbizarre
-      </button>
-      <button type="button" onClick={() => setPokemonName("mew")}>
-        Mew
-      </button>
     </div>
   );
 }
