@@ -15,7 +15,12 @@ function NavBar({ setPokemonName, pokemonList }: NavBarProps) {
         <button
           key={element.name}
           type="button"
-          onClick={() => setPokemonName(element.name)}
+          onClick={() => {
+            setPokemonName(element.name);
+            if (element.name.toLowerCase() === "pikachu") {
+              alert("Pika Pika!!!!!");
+            }
+          }}
         >
           {element.name}
         </button>
