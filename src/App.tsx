@@ -1,41 +1,42 @@
 import "./App.css";
 import PokemonCard from "../src/components/PokemonCard.tsx";
 import { useState } from "react";
+import NavBar from "./components/NavBar.tsx";
 
 const pokemonList = [
   {
-    name: "bulbizarre",
+    name: "Bulbizarre",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    type: "herbe",
+    type: "Herbe",
   },
   {
-    name: "mew",
+    name: "Mew",
     imgSrc: "https://www.pokepedia.fr/images/e/e6/Mew-RFVF.png",
-    type: "psy",
+    type: "Psy",
   },
   {
-    name: "charmander",
+    name: "Salamèche",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
     type: "Feu",
   },
   {
-    name: "squirtle",
+    name: "Carapuce",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    type: "eau",
+    type: "Eau",
   },
   {
-    name: "pikachu",
+    name: "Pikachu",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-    type: "électrique",
+    type: "Electrique",
   },
 ];
 
 function App() {
-  const [pokemonName, setPokemonName] = useState("bulbizarre");
+  const [pokemonName, setPokemonName] = useState("Bulbizarre");
   const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
 
   if (pokemon == null) {
@@ -55,8 +56,8 @@ function App() {
           </button>
         ))}
       </nav>
+      <NavBar setPokemonName={setPokemonName} pokemonList={pokemonList} />
       <PokemonCard pokemon={pokemon} />
-      <p>{pokemonName}</p>
     </div>
   );
 }
